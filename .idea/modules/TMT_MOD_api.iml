@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../src/api">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/api/groovy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/api/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/api/resources" type="java-resource" />
     </content>

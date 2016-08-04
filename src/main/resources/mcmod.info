@@ -1,0 +1,21 @@
+{
+  "modListVersion": 2,
+  "modList": [{
+    "modid": "spacebuilder2020.military_science",
+    "name": "Military Science",
+    "description": "",
+    "version": "0.1",
+    "mcversion": "1.10.2",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [ "spacebuilder2020" ],
+    "credits": "Written by spacebuilder2020.  Inspired by atomic science written by Calclavia",
+    "logoFile": "",
+    "screenshots": [ ],
+    "parent": "",
+    "requiredMods": [ "Forge" ],
+    "dependencies": [ ],
+    "dependants": [ ],
+    "useDependencyInformation": true
+  }]
+}

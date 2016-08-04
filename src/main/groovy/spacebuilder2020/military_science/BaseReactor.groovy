@@ -1,4 +1,4 @@
-package spacebuilder2020.TMT_MOD
+package spacebuilder2020.military_science
 
 import net.minecraft.block.ITileEntityProvider
 import net.minecraft.tileentity.TileEntity
