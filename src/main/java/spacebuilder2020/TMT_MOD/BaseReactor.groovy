@@ -9,14 +9,15 @@ import net.minecraft.world.World
  * Created by spacebuilder2020 on 8/4/2016.
  */
 class BaseReactor extends BaseBlock implements ITileEntityProvider {
+    Class<TileEntity> reactorTile = null
     @Override
     TileEntity createNewTileEntity(World worldIn, int meta) {
-        return null
+        return reactorTile?.newInstance()
     }
 
 
 
-    class ReactorTile extends TileEntity implements ITickable
+    public static class ReactorTile extends TileEntity implements ITickable
     {
         @Override
         void update() {
