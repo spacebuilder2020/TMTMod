@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TMT_MOD.iml" filepath="$PROJECT_DIR$/.idea/modules/TMT_MOD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TMT_MOD_api.iml" filepath="$PROJECT_DIR$/.idea/modules/TMT_MOD_api.iml" group="TMT_MOD" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TMT_MOD_main.iml" filepath="$PROJECT_DIR$/.idea/modules/TMT_MOD_main.iml" group="TMT_MOD" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TMT_MOD_test.iml" filepath="$PROJECT_DIR$/.idea/modules/TMT_MOD_test.iml" group="TMT_MOD" />
+    </modules>
+  </component>
+</project>
