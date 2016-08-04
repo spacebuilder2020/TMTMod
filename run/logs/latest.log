@@ -1,18 +1,56 @@
-[11:23:01] [Client thread/INFO]: Setting user: Player192
-[11:23:04] [Client thread/WARN]: Skipping bad option: lastServer:
-[11:23:04] [Client thread/INFO]: LWJGL Version: 2.9.4
-[11:23:09] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Military Science
-[11:23:11] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[11:23:11] [Thread-8/INFO]: Initializing LWJGL OpenAL
-[11:23:11] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[11:23:11] [Thread-8/INFO]: OpenAL initialized.
-[11:23:12] [Sound Library Loader/INFO]: Sound engine started
-[11:23:14] [Client thread/INFO]: Created: 16x16 textures-atlas
-[11:23:15] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Military Science
-[11:23:16] [Client thread/INFO]: SoundSystem shutting down...
-[11:23:16] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
-[11:23:16] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[11:23:16] [Thread-10/INFO]: Initializing LWJGL OpenAL
-[11:23:16] [Thread-10/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[11:23:16] [Thread-10/INFO]: OpenAL initialized.
-[11:23:17] [Sound Library Loader/INFO]: Sound engine started
+[12:06:36] [Client thread/INFO]: Setting user: Player854
+[12:06:39] [Client thread/WARN]: Skipping bad option: lastServer:
+[12:06:39] [Client thread/INFO]: LWJGL Version: 2.9.4
+[12:06:43] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Military Science
+[12:06:45] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[12:06:45] [Thread-8/INFO]: Initializing LWJGL OpenAL
+[12:06:45] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[12:06:45] [Thread-8/INFO]: OpenAL initialized.
+[12:06:45] [Sound Library Loader/INFO]: Sound engine started
+[12:06:47] [Client thread/INFO]: Created: 16x16 textures-atlas
+[12:06:48] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Military Science
+[12:06:50] [Client thread/INFO]: SoundSystem shutting down...
+[12:06:50] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[12:06:50] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[12:06:50] [Thread-10/INFO]: Initializing LWJGL OpenAL
+[12:06:50] [Thread-10/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[12:06:50] [Thread-10/INFO]: OpenAL initialized.
+[12:06:51] [Sound Library Loader/INFO]: Sound engine started
+[12:06:52] [Client thread/INFO]: Created: 1024x512 textures-atlas
+[12:06:52] [Client thread/WARN]: Skipping bad option: lastServer:
+[12:06:53] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[12:06:55] [Server thread/INFO]: Starting integrated minecraft server version 1.10.2
+[12:06:55] [Server thread/INFO]: Generating keypair
+[12:06:56] [Server thread/INFO]: Preparing start region for level 0
+[12:06:57] [Server thread/INFO]: Preparing spawn area: 67%
+[12:06:57] [Server thread/INFO]: Changing view distance to 12, from 10
+[12:06:58] [Server thread/INFO]: Player854[local:E:7a6ca06a] logged in with entity id 252 at (-217.080670267793, 63.04438288805257, 244.84820815097942)
+[12:06:58] [Server thread/INFO]: Player854 joined the game
+[12:06:59] [Server thread/INFO]: Saving and pausing game...
+[12:06:59] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[12:06:59] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[12:06:59] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[12:06:59] [pool-2-thread-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@506144f5[id=2a68c4a4-c1ba-3396-a626-ac7041e25da5,name=Player854,properties={},legacy=false]
+com.mojang.authlib.exceptions.AuthenticationException: The client has sent too many requests within a certain amount of time
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:65) ~[YggdrasilAuthenticationService.class:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillGameProfile(YggdrasilMinecraftSessionService.java:175) [YggdrasilMinecraftSessionService.class:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1.load(YggdrasilMinecraftSessionService.java:59) [YggdrasilMinecraftSessionService$1.class:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1.load(YggdrasilMinecraftSessionService.java:56) [YggdrasilMinecraftSessionService$1.class:?]
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3524) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2317) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2280) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2195) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3934) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3938) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4821) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4827) [guava-17.0.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillProfileProperties(YggdrasilMinecraftSessionService.java:165) [YggdrasilMinecraftSessionService.class:?]
+	at net.minecraft.client.Minecraft.getProfileProperties(Minecraft.java:3060) [Minecraft.class:?]
+	at net.minecraft.client.resources.SkinManager$3.run(SkinManager.java:131) [SkinManager$3.class:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_60]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_60]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_60]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_60]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_60]
+[12:07:03] [Server thread/INFO]: Player854 has just earned the achievement [Taking Inventory]
+[12:07:03] [Client thread/INFO]: [CHAT] Player854 has just earned the achievement [Taking Inventory]
