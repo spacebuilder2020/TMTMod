@@ -24,7 +24,8 @@ public class Main
                 return Items.CAULDRON
             }
         }
-        fissionReactor = new FissionReactor();
+        fissionReactor = new FissionReactor()
+        heatedWater = new HeatedWater()
     }
 
     @Mod.EventHandler
@@ -39,7 +40,8 @@ public class Main
     }
 
     @Mod.Instance
-    public static Main instance = new Main();
-    public CreativeTabs sb2020tab = null;
-    public Block fissionReactor = null;
+    public static Main instance = new Main()
+    public CreativeTabs sb2020tab = null
+    public Block fissionReactor = null
+    public Block heatedWater = null
 }
