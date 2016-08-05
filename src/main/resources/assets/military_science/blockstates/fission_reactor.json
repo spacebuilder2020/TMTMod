@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "normal": { "model": "military_science:fission_reactor" }
+  }
+}
