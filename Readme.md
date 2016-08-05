@@ -1,2 +1,2 @@
-#A reimplementation of Atomic Science written completely from scratch
+#A mod inspired by Atomic Science
     My Modding Trials submission
