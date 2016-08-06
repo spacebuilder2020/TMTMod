@@ -31,6 +31,8 @@ class Turbine extends BaseTileBlock {
         GameRegistry.registerTileEntity(Turbine.TurbineTile.class, "turbine");
 
         ModelLoader.setCustomModelResourceLocation(i, 0, new ModelResourceLocation("military_science:turbine", "inventory"));
+
+
     }
     @Override
     public boolean isOpaqueCube(IBlockState iBlockState) {

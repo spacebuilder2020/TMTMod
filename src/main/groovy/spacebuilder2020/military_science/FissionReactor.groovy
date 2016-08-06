@@ -5,15 +5,18 @@ import net.minecraft.block.state.IBlockState
 import net.minecraft.client.renderer.block.model.ModelResourceLocation
 import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.init.Blocks
+import net.minecraft.inventory.IInventory
 import net.minecraft.item.Item
 import net.minecraft.item.ItemBlock
 import net.minecraft.item.ItemStack
+import net.minecraft.nbt.NBTTagCompound
 import net.minecraft.tileentity.TileEntity
 import net.minecraft.util.EnumBlockRenderType
 import net.minecraft.util.EnumFacing
 import net.minecraft.util.EnumHand
 import net.minecraft.util.math.AxisAlignedBB
 import net.minecraft.util.math.BlockPos
+import net.minecraft.util.text.TextComponentString
 import net.minecraft.world.IBlockAccess
 import net.minecraft.world.World
 import net.minecraftforge.client.model.ModelLoader
@@ -58,17 +61,24 @@ class FissionReactor extends BaseTileBlock {
         if (!p_onBlockActivated_1_.isRemote && p_onBlockActivated_5_ == EnumHand.MAIN_HAND) {
             TileEntity te;
             if ((te = p_onBlockActivated_1_.getTileEntity(p_onBlockActivated_2_)) instanceof FissionTile) {
-                if (!((te as FissionTile).running))
-                    (te as FissionTile).running = true;
-                else
-                    println((te as FissionTile).heat)
+                p_onBlockActivated_4_.addChatComponentMessage(new TextComponentString((te as FissionTile).heat.toString()))
             }
         }
         return super.onBlockActivated(p_onBlockActivated_1_, p_onBlockActivated_2_, p_onBlockActivated_3_, p_onBlockActivated_4_, p_onBlockActivated_5_, p_onBlockActivated_6_, p_onBlockActivated_7_, p_onBlockActivated_8_, p_onBlockActivated_9_, p_onBlockActivated_10_)
     }
 
-    public static class FissionTile extends BaseTileBlock.Tile
+    public static class FissionTile extends BaseTileBlock.Tile implements IInventory
     {
+        ItemStack[] fuel = new ItemStack[1]
+        @Override
+        void readFromNBT(NBTTagCompound p_readFromNBT_1_) {
+            super.readFromNBT(p_readFromNBT_1_)
+        }
+
+        @Override
+        NBTTagCompound writeToNBT(NBTTagCompound p_writeToNBT_1_) {
+            return super.writeToNBT(p_writeToNBT_1_)
+        }
         BlockPos[] adj = new BlockPos[6];
         @Override
         void setPos(BlockPos p_setPos_1_) {
@@ -82,13 +92,12 @@ class FissionReactor extends BaseTileBlock {
 
         }
         int heat = 0;
-        boolean running = false;
         int tick = 0
         @Override
         void update() {
 
             if (!worldObj.isRemote) {
-                if (running) {
+                if (fuel[0]) {
                     heat += 3
                 }
                 ArrayList<BlockPos> waterBlocks = new ArrayList<>()
@@ -121,6 +130,106 @@ class FissionReactor extends BaseTileBlock {
                 }
             }
             super.update()
+        }
+
+        @Override
+        int getSizeInventory() {
+            return 1
+        }
+
+        @Override
+        ItemStack getStackInSlot(int i) {
+            if (i == 0)
+                return fuel[i]
+            else
+                return null
+        }
+
+        @Override
+        ItemStack decrStackSize(int i, int i1) {
+            return null;
+        }
+
+        @Override
+        ItemStack removeStackFromSlot(int i) {
+            if (i == 0)
+            {
+                def out = fuel[i]
+                fuel[i] = null;
+                return out
+            }
+            else
+                return null
+        }
+
+        @Override
+        void setInventorySlotContents(int i, @Nullable ItemStack itemStack) {
+            if (i == 0) {
+                fuel[i] = itemStack
+                if( itemStack?.stackSize > getInventoryStackLimit()) {
+                    itemStack.stackSize = getInventoryStackLimit()
+                }
+            }
+        }
+
+        @Override
+        int getInventoryStackLimit() {
+            return 1
+        }
+
+        @Override
+        boolean isUseableByPlayer(EntityPlayer entityPlayer) {
+            if (this.worldObj.getTileEntity(this.pos) != this) return false;
+            final double X_CENTRE_OFFSET = 0.5;
+            final double Y_CENTRE_OFFSET = 0.5;
+            final double Z_CENTRE_OFFSET = 0.5;
+            final double MAXIMUM_DISTANCE_SQ = 8.0 * 8.0;
+            return entityPlayer.getDistanceSq(pos.getX() + X_CENTRE_OFFSET, pos.getY() + Y_CENTRE_OFFSET, pos.getZ() + Z_CENTRE_OFFSET) < MAXIMUM_DISTANCE_SQ;
+        }
+
+        @Override
+        void openInventory(EntityPlayer entityPlayer) {
+
+        }
+
+        @Override
+        void closeInventory(EntityPlayer entityPlayer) {
+
+        }
+
+        @Override
+        boolean isItemValidForSlot(int i, ItemStack itemStack) {
+            return true
+        }
+
+        @Override
+        int getField(int i) {
+            return 0
+        }
+
+        @Override
+        void setField(int i, int i1) {
+
+        }
+
+        @Override
+        int getFieldCount() {
+            return 0
+        }
+
+        @Override
+        void clear() {
+            fuel[0] = null
+        }
+
+        @Override
+        String getName() {
+            return "container.fusion_reactor.name"
+        }
+
+        @Override
+        boolean hasCustomName() {
+            return false
         }
     }
 

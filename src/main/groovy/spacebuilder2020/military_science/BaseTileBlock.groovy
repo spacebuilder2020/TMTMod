@@ -1,5 +1,7 @@
 package spacebuilder2020.military_science
 
+import net.minecraft.block.Block
+import net.minecraft.block.BlockContainer
 import net.minecraft.block.ITileEntityProvider
 import net.minecraft.tileentity.TileEntity
 import net.minecraft.util.ITickable
@@ -15,7 +17,6 @@ class BaseTileBlock extends BaseBlock implements ITileEntityProvider {
     TileEntity createNewTileEntity(World worldIn, int meta) {
         return tileClass?.newInstance()
     }
-
     static HashMap<BlockPos,Integer> heatMap = new HashMap<>()
     static HashSet<BlockPos> airMap = new HashMap<>()
 
