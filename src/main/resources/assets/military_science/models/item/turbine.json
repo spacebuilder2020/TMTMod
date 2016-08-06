@@ -1,7 +1,7 @@
 {
   "parent":"builtin/generated",
   "textures": {
-    "layer0":"blocks/stone"
+    "layer0":"military_science:blocks/turbine"
   },
   "display": {
     "thirdperson": {

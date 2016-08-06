@@ -1,7 +1,7 @@
 {
   "parent":"builtin/generated",
   "textures": {
-    "layer0":"military_science:blocks/fission_reactor"
+    "layer0":"military_science:blocks/uranium_fuel_rod"
   },
   "display": {
     "thirdperson": {
