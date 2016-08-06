@@ -39,7 +39,6 @@ class FissionReactor extends BaseTileBlock {
         GameRegistry.register(this);
         GameRegistry.register(i = new ItemBlock(this), getRegistryName());
         GameRegistry.registerTileEntity(FissionTile.class, "fission_reactor");
-        Blocks.BIRCH_FENCE
         ModelLoader.setCustomModelResourceLocation(i, 0, new ModelResourceLocation("military_science:fission_reactor", "inventory"));
     }
 
@@ -73,11 +72,16 @@ class FissionReactor extends BaseTileBlock {
         @Override
         void readFromNBT(NBTTagCompound p_readFromNBT_1_) {
             super.readFromNBT(p_readFromNBT_1_)
+            fuel[0] = ItemStack.loadItemStackFromNBT(p_readFromNBT_1_.getCompoundTag("fuel"))
+            heat = p_readFromNBT_1_.getInteger("heat")
         }
 
         @Override
         NBTTagCompound writeToNBT(NBTTagCompound p_writeToNBT_1_) {
-            return super.writeToNBT(p_writeToNBT_1_)
+            p_writeToNBT_1_ = super.writeToNBT(p_writeToNBT_1_)
+            fuel[0].writeToNBT(p_writeToNBT_1_.getCompoundTag("fuel"))
+            p_writeToNBT_1_.setInteger("heat",heat)
+            return p_writeToNBT_1_
         }
         BlockPos[] adj = new BlockPos[6];
         @Override
@@ -92,13 +96,14 @@ class FissionReactor extends BaseTileBlock {
 
         }
         int heat = 0;
-        int tick = 0
         @Override
         void update() {
 
             if (!worldObj.isRemote) {
-                if (fuel[0]) {
+                if (fuel[0] && fuel[0].item.equals(Main.instance.uraniumFuelRod) && fuel[0].itemDamage < (fuel[0].item.getMaxDamage() -2)) {
                     heat += 3
+                    fuel[0].itemDamage++
+
                 }
                 ArrayList<BlockPos> waterBlocks = new ArrayList<>()
                 for (bp in adj) {
@@ -147,7 +152,9 @@ class FissionReactor extends BaseTileBlock {
 
         @Override
         ItemStack decrStackSize(int i, int i1) {
-            return null;
+            def fi = fuel[i]
+            fuel[i] = null
+            return fi;
         }
 
         @Override
@@ -199,7 +206,9 @@ class FissionReactor extends BaseTileBlock {
 
         @Override
         boolean isItemValidForSlot(int i, ItemStack itemStack) {
-            return true
+            if (i == 0)
+                return true
+            return false
         }
 
         @Override

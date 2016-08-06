@@ -26,6 +26,7 @@ public class Main
         }
         fissionReactor = new FissionReactor()
         turbine = new Turbine()
+        uraniumFuelRod = new UraniumFuelRod()
     }
 
     @Mod.EventHandler
@@ -44,4 +45,5 @@ public class Main
     public CreativeTabs sb2020tab = null
     public Block fissionReactor = null
     public Block turbine = null
+    public Item uraniumFuelRod = null
 }
