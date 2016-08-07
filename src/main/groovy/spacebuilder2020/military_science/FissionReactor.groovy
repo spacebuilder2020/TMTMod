@@ -79,7 +79,7 @@ class FissionReactor extends BaseTileBlock {
         @Override
         NBTTagCompound writeToNBT(NBTTagCompound p_writeToNBT_1_) {
             p_writeToNBT_1_ = super.writeToNBT(p_writeToNBT_1_)
-            fuel[0].writeToNBT(p_writeToNBT_1_.getCompoundTag("fuel"))
+            fuel[0]?.writeToNBT(p_writeToNBT_1_.getCompoundTag("fuel"))
             p_writeToNBT_1_.setInteger("heat",heat)
             return p_writeToNBT_1_
         }

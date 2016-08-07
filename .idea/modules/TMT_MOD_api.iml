@@ -28,6 +28,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy-all:2.3.11" level="project" />
+    <orderEntry type="library" name="Gradle: net.darkhax.tesla:Tesla:1.10.2-1.2.1.42" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>

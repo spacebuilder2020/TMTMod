@@ -1,11 +1,14 @@
 package spacebuilder2020.military_science
 
+import net.darkhax.tesla.capability.TeslaCapabilities
+import net.darkhax.tesla.lib.TeslaUtils
 import net.minecraft.block.state.IBlockState
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.block.model.ModelResourceLocation
 import net.minecraft.entity.EntityLivingBase
 import net.minecraft.item.Item
 import net.minecraft.item.ItemBlock
+import net.minecraft.tileentity.TileEntity
 import net.minecraft.util.EnumBlockRenderType
 import net.minecraft.util.EnumFacing
 import net.minecraft.util.math.AxisAlignedBB
@@ -53,14 +56,25 @@ class Turbine extends BaseTileBlock {
     }
 
     public static class TurbineTile extends BaseTileBlock.Tile {
+        BlockPos down;
+        BlockPos up;
+        @Override
+        void setPos(BlockPos p_setPos_1_) {
+            super.setPos(p_setPos_1_)
+            down = pos.down()
+            up = pos.up()
+        }
         @Override
         void update() {
             if (!worldObj.isRemote) {
-                BlockPos down = pos.down()
+
                 if (airMap.contains(down)) {
                     airMap.remove(down)
-                    println "Caught Steam!"
+                    net.minecraft.tileentity.TileEntity teup = worldObj.getTileEntity(up)
+                    if (teup)
+                        TeslaUtils.givePower(teup, EnumFacing.DOWN, 100, false)
                 }
+
             }
             super.update()
         }
