@@ -32,7 +32,7 @@ targetCompatibility = 1.8
 
 
 minecraft {
-    version = "1.10.2-12.18.1.2014"
+    version = "1.10.2-12.18.1.2045"
     runDir = "run"
 
     // the mappings can be changed at any time, and must be in the following format.
@@ -76,7 +76,7 @@ dependencies {
 
     compile 'org.codehaus.groovy:groovy-all:2.3.11'
 
-    compile "net.darkhax.tesla:Tesla:1.10.2-1.2.1.42"
+    compile "net.darkhax.tesla:Tesla:1.10.2-1.2.1.42:deobf"
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 

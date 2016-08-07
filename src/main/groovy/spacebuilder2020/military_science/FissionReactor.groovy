@@ -21,6 +21,8 @@ import net.minecraft.world.IBlockAccess
 import net.minecraft.world.World
 import net.minecraftforge.client.model.ModelLoader
 import net.minecraftforge.fml.common.registry.GameRegistry
+import net.minecraftforge.fml.relauncher.Side
+import net.minecraftforge.fml.relauncher.SideOnly
 
 import javax.annotation.Nullable
 
@@ -32,28 +34,32 @@ class FissionReactor extends BaseTileBlock {
     public FissionReactor()
     {
         tileClass = FissionTile
-        Item i;
         setUnlocalizedName("fission_reactor");
         setRegistryName("fission_reactor");
-        setCreativeTab(Main.instance.sb2020tab);
         GameRegistry.register(this);
         GameRegistry.register(i = new ItemBlock(this), getRegistryName());
         GameRegistry.registerTileEntity(FissionTile.class, "fission_reactor");
-        ModelLoader.setCustomModelResourceLocation(i, 0, new ModelResourceLocation("military_science:fission_reactor", "inventory"));
+        setCreativeTab(Main.instance.sb2020tab);
     }
 
+    @SideOnly(Side.CLIENT)
     @Override
     public boolean isOpaqueCube(IBlockState iBlockState) {
         return false;
     }
+
+    @SideOnly(Side.CLIENT)
     @Override
     public boolean isFullCube(IBlockState iBlockState) {
         return false;
     }
+
+    @SideOnly(Side.CLIENT)
     @Override
     public EnumBlockRenderType getRenderType(IBlockState iBlockState) {
         return EnumBlockRenderType.MODEL;
     }
+
     @Override
     boolean onBlockActivated(World p_onBlockActivated_1_, BlockPos p_onBlockActivated_2_, IBlockState p_onBlockActivated_3_, EntityPlayer p_onBlockActivated_4_, EnumHand p_onBlockActivated_5_,
                              @Nullable ItemStack p_onBlockActivated_6_, EnumFacing p_onBlockActivated_7_, float p_onBlockActivated_8_, float p_onBlockActivated_9_, float p_onBlockActivated_10_) {

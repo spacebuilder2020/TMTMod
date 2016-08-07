@@ -4,7 +4,8 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs
 import net.minecraft.init.Items
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -13,20 +14,13 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class Main
 {
 
+    @SidedProxy (clientSide = "spacebuilder2020.military_science,ClientProxy",serverSide = "spacebuilder2020.military_science.ServerProxy")
+    public static CommonProxy cp;
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
+        cp.preInit(event)
 
-        sb2020tab = new CreativeTabs("Spacebuilder2020"){
-
-            @Override
-            Item getTabIconItem() {
-                return Items.CAULDRON
-            }
-        }
-        fissionReactor = new FissionReactor()
-        turbine = new Turbine()
-        uraniumFuelRod = new UraniumFuelRod()
     }
 
     @Mod.EventHandler
@@ -46,4 +40,5 @@ public class Main
     public Block fissionReactor = null
     public Block turbine = null
     public Item uraniumFuelRod = null
+    public boolean clientSide = false
 }

@@ -17,6 +17,8 @@ import net.minecraft.world.IBlockAccess
 import net.minecraft.world.World
 import net.minecraftforge.client.model.ModelLoader
 import net.minecraftforge.fml.common.registry.GameRegistry
+import net.minecraftforge.fml.relauncher.Side
+import net.minecraftforge.fml.relauncher.SideOnly
 
 /**
  * Created by spacebuilder2020 on 8/4/2016.
@@ -28,23 +30,28 @@ class Turbine extends BaseTileBlock {
         Item i;
         setUnlocalizedName("turbine");
         setRegistryName("turbine");
-        setCreativeTab(Main.instance.sb2020tab);
+
         GameRegistry.register(this);
         GameRegistry.register(i = new ItemBlock(this), getRegistryName());
         GameRegistry.registerTileEntity(Turbine.TurbineTile.class, "turbine");
-
-        ModelLoader.setCustomModelResourceLocation(i, 0, new ModelResourceLocation("military_science:turbine", "inventory"));
+        setCreativeTab(Main.instance.sb2020tab)
 
 
     }
+
+    @SideOnly(Side.CLIENT)
     @Override
     public boolean isOpaqueCube(IBlockState iBlockState) {
         return false;
     }
+
+    @SideOnly(Side.CLIENT)
     @Override
     public boolean isFullCube(IBlockState iBlockState) {
         return false;
     }
+
+    @SideOnly(Side.CLIENT)
     @Override
     public EnumBlockRenderType getRenderType(IBlockState iBlockState) {
         return EnumBlockRenderType.MODEL;

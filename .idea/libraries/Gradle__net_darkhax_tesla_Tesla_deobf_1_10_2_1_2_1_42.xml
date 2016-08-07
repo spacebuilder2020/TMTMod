@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="Gradle: net.darkhax.tesla:Tesla:1.10.2-1.2.1.42">
+  <library name="Gradle: net.darkhax.tesla:Tesla:deobf:1.10.2-1.2.1.42">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.darkhax.tesla/Tesla/1.10.2-1.2.1.42/89c1aba4172c62889d1382d038451a090f4f52e0/Tesla-1.10.2-1.2.1.42.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.darkhax.tesla/Tesla/1.10.2-1.2.1.42/d23d1bb3dfe645949c7e7e3c5839c7eddf30c520/Tesla-1.10.2-1.2.1.42-deobf.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.darkhax.tesla/Tesla/1.10.2-1.2.1.42/78570afc1fe691911f3f002a1281315c8aaac996/Tesla-1.10.2-1.2.1.42-javadoc.jar!/" />

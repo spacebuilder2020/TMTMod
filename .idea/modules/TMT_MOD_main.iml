@@ -29,11 +29,11 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy-all:2.3.11" level="project" />
-    <orderEntry type="library" name="Gradle: net.darkhax.tesla:Tesla:1.10.2-1.2.1.42" level="project" />
+    <orderEntry type="library" name="Gradle: net.darkhax.tesla:Tesla:deobf:1.10.2-1.2.1.42" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.10.2-12.18.1.2014/snapshot/20160518/forgeBin-1.10.2-12.18.1.2014.jar!/" />
+          <root url="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.10.2-12.18.1.2045/snapshot/20160518/forgeBin-1.10.2-12.18.1.2045.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -98,7 +98,7 @@
     <orderEntry type="module-library" scope="RUNTIME">
       <library>
         <CLASSES>
-          <root url="file://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.10.2-12.18.1.2014/start" />
+          <root url="file://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.10.2-12.18.1.2045/start" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

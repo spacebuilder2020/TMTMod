@@ -3,6 +3,7 @@ package spacebuilder2020.military_science
 import net.minecraft.block.Block
 import net.minecraft.block.BlockContainer
 import net.minecraft.block.ITileEntityProvider
+import net.minecraft.item.Item
 import net.minecraft.tileentity.TileEntity
 import net.minecraft.util.ITickable
 import net.minecraft.util.math.BlockPos
@@ -13,6 +14,7 @@ import net.minecraft.world.World
  */
 class BaseTileBlock extends BaseBlock implements ITileEntityProvider {
     Class<TileEntity> tileClass = null
+    public Item i;
     @Override
     TileEntity createNewTileEntity(World worldIn, int meta) {
         return tileClass?.newInstance()
