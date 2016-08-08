@@ -2,8 +2,11 @@ package spacebuilder2020.military_science;
 
 import net.darkhax.tesla.lib.TeslaUtils;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
@@ -25,12 +28,12 @@ public class Turbine extends BaseTileBlock
         setTileClass(TurbineTile.class);
         setUnlocalizedName("turbine");
         setRegistryName("turbine");
-
+        
         GameRegistry.register(this);
         GameRegistry.register(i = new ItemBlock(this), getRegistryName());
         GameRegistry.registerTileEntity(TurbineTile.class, "turbine");
         setCreativeTab(Main.instance.sb2020tab);
-
+        GameRegistry.addRecipe(new ItemStack(i),"crc","rcr","crc",'c', Blocks.COBBLESTONE, 'r', Items.REDSTONE);
     }
 
     @Override

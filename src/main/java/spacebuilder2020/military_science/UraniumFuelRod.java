@@ -1,6 +1,8 @@
 package spacebuilder2020.military_science;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
@@ -15,5 +17,7 @@ public class UraniumFuelRod extends Item
         setRegistryName("uranium_fuel_rod");
         GameRegistry.register(this);
         setCreativeTab(Main.instance.sb2020tab);
+
+        GameRegistry.addRecipe(new ItemStack(this),"gsg","grg","gsg",'g', Blocks.GLASS_PANE, 's', Blocks.STONE_SLAB,'r',Blocks.REDSTONE_BLOCK);
     }
 }

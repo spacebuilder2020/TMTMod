@@ -7,6 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
@@ -38,6 +39,8 @@ public class FissionReactor extends BaseTileBlock
         GameRegistry.register(i = new ItemBlock(this), getRegistryName());
         GameRegistry.registerTileEntity(FissionTile.class, "fission_reactor");
         setCreativeTab(Main.instance.sb2020tab);
+
+        GameRegistry.addRecipe(new ItemStack(i),"oso","sds","oso",'o',Blocks.OBSIDIAN, 's', Blocks.STONE,'d',Blocks.DIAMOND_BLOCK);
     }
 
     @Override
