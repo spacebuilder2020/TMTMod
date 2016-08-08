@@ -3,6 +3,7 @@ package spacebuilder2020.military_science;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 /**
@@ -26,4 +27,8 @@ public class CommonProxy
         Main.instance.uraniumFuelRod = new UraniumFuelRod();
     }
 
+    public void init(FMLInitializationEvent event)
+    {
+
+    }
 }

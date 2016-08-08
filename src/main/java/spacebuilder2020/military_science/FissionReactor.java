@@ -40,21 +40,18 @@ public class FissionReactor extends BaseTileBlock
         setCreativeTab(Main.instance.sb2020tab);
     }
 
-    @SideOnly(Side.CLIENT)
     @Override
     public boolean isOpaqueCube(IBlockState iBlockState)
     {
         return false;
     }
 
-    @SideOnly(Side.CLIENT)
     @Override
     public boolean isFullCube(IBlockState iBlockState)
     {
         return false;
     }
 
-    @SideOnly(Side.CLIENT)
     @Override
     public EnumBlockRenderType getRenderType(IBlockState iBlockState)
     {
@@ -93,7 +90,8 @@ public class FissionReactor extends BaseTileBlock
         public NBTTagCompound writeToNBT(NBTTagCompound p_writeToNBT_1_)
         {
             p_writeToNBT_1_ = super.writeToNBT(p_writeToNBT_1_);
-            fuel[0].writeToNBT(p_writeToNBT_1_.getCompoundTag("fuel"));
+            if (fuel[0] != null)
+                fuel[0].writeToNBT(p_writeToNBT_1_.getCompoundTag("fuel"));
             p_writeToNBT_1_.setInteger("heat", heat);
             return p_writeToNBT_1_;
         }
@@ -146,7 +144,7 @@ public class FissionReactor extends BaseTileBlock
                     if (heat > 0)
                     {
                         BaseTileBlock.getHeatMap().put(bp,BaseTileBlock.getHeatMap().get(bp)+1);
-                        heat = heat--;
+                        heat = heat-1;
                         if (BaseTileBlock.getHeatMap().get(bp) > 15)
                         {
                             worldObj.setBlockState(bp, Blocks.AIR.getDefaultState());

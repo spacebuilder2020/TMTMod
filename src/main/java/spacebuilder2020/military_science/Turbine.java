@@ -23,7 +23,6 @@ public class Turbine extends BaseTileBlock
     public Turbine()
     {
         setTileClass(TurbineTile.class);
-        Item i;
         setUnlocalizedName("turbine");
         setRegistryName("turbine");
 
@@ -34,21 +33,18 @@ public class Turbine extends BaseTileBlock
 
     }
 
-    @SideOnly(Side.CLIENT)
     @Override
     public boolean isOpaqueCube(IBlockState iBlockState)
     {
         return false;
     }
 
-    @SideOnly(Side.CLIENT)
     @Override
     public boolean isFullCube(IBlockState iBlockState)
     {
         return false;
     }
 
-    @SideOnly(Side.CLIENT)
     @Override
     public EnumBlockRenderType getRenderType(IBlockState iBlockState)
     {

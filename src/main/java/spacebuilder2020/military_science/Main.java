@@ -22,7 +22,7 @@ public class Main
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-
+        cp.init(event);
     }
 
     public void postInit(FMLPostInitializationEvent event)
@@ -30,7 +30,7 @@ public class Main
 
     }
 
-    @SidedProxy(clientSide = "spacebuilder2020.military_science,ClientProxy", serverSide = "spacebuilder2020.military_science.ServerProxy")
+    @SidedProxy(clientSide = "spacebuilder2020.military_science.ClientProxy", serverSide = "spacebuilder2020.military_science.ServerProxy")
     public static CommonProxy cp;
     @Mod.Instance
     public static Main instance = new Main();
@@ -38,5 +38,4 @@ public class Main
     public Block fissionReactor = null;
     public Block turbine = null;
     public Item uraniumFuelRod = null;
-    public boolean clientSide = false;
 }
