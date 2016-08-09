@@ -16,7 +16,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.codehaus.groovy.runtime.DefaultGroovyMethods;
 
 /**
  * Created by spacebuilder2020 on 8/4/2016.
@@ -28,7 +27,7 @@ public class Turbine extends BaseTileBlock
         setTileClass(TurbineTile.class);
         setUnlocalizedName("turbine");
         setRegistryName("turbine");
-        
+
         GameRegistry.register(this);
         GameRegistry.register(i = new ItemBlock(this), getRegistryName());
         GameRegistry.registerTileEntity(TurbineTile.class, "turbine");
@@ -80,7 +79,7 @@ public class Turbine extends BaseTileBlock
                 {
                     BaseTileBlock.getAirMap().remove(down);
                     TileEntity teup = worldObj.getTileEntity(up);
-                    if (DefaultGroovyMethods.asBoolean(teup))
+                    if (teup != null)
                         TeslaUtils.givePower(teup, EnumFacing.DOWN, 100, false);
                 }
 
